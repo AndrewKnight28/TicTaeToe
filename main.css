@@ -1,0 +1,142 @@
+body {
+  background-color: #1e1e1e;
+}
+
+header {
+  background: white;
+  padding: 20px;
+}
+header h1 {
+  color: #25272E;
+  text-align: center;
+  font-family: "Consolas";
+}
+
+.board {
+  padding: 80px;
+  color: wheat;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 104px 104px 104px;
+  font-size: 40px;
+  justify-content: center;
+  text-align: center;
+}
+.row .box-1 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-2 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-3 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-4 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-5 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-6 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-7 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-8 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-9 {
+  background-color: #25272E;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+}
+.row .box-1:hover {
+  cursor: pointer;
+}
+.row .box-2:hover {
+  cursor: pointer;
+}
+.row .box-3:hover {
+  cursor: pointer;
+}
+.row .box-4:hover {
+  cursor: pointer;
+}
+.row .box-5:hover {
+  cursor: pointer;
+}
+.row .box-6:hover {
+  cursor: pointer;
+}
+.row .box-7:hover {
+  cursor: pointer;
+}
+.row .box-8:hover {
+  cursor: pointer;
+}
+.row .box-9:hover {
+  cursor: pointer;
+}
+
+.users {
+  font-size: 40px;
+  color: white;
+}
+.users .namebox {
+  background-color: red;
+  position: relative;
+  width: 612px;
+  left: 30%;
+}
+.users p {
+  text-align: center;
+  font-family: "Monaco";
+}
+
+/*# sourceMappingURL=main.css.map */
