@@ -1,7 +1,7 @@
 $bg-color: #1e1e1e;
 $class-slug: box !default;
-$search: search-txt;
-$sbox: search-box;
+// $search: search-txt;
+// $sbox: search-box;
 
 @function pos($i) {
     @if ($i % 3==0) {
@@ -29,7 +29,7 @@ header {
 }
 
 .board {
-    padding: 40px;
+    padding: 80px;
     color: wheat;
 }
 
@@ -80,64 +80,64 @@ header {
 
 
 
-@for $i from 1 through 2 {
+// @for $i from 1 through 2 {
 
-    .#{$sbox}-#{$i} {
-        position: absolute;
-        top: 35%;
+//     .#{$sbox}-#{$i} {
+//         position: absolute;
+//         top: 35%;
 
-        @if ($i==1) {
-            left: 25%;
-        }
+//         @if ($i==1) {
+//             left: 25%;
+//         }
 
-        @else {
-            left: 75%;
-        }
+//         @else {
+//             left: 75%;
+//         }
 
-        transform: translate(-50%, -50%);
-        background: #2f3640;
-        height: 40px;
-        border-radius: 40px;
-        padding: 10px;
+//         transform: translate(-50%, -50%);
+//         background: #2f3640;
+//         height: 40px;
+//         border-radius: 40px;
+//         padding: 10px;
 
-    }
+//     }
 
-    .#{$sbox}-#{$i}:hover>.#{$search}-#{$i} {
-        width: 240px;
-        padding: 0 6px;
-    }
+//     .#{$sbox}-#{$i}:hover>.#{$search}-#{$i} {
+//         width: 240px;
+//         padding: 0 6px;
+//     }
 
-    .#{$sbox}-#{$i}:hover>.search-btn {
-        background: white;
-        color: black;
-    }
+//     .#{$sbox}-#{$i}:hover>.search-btn {
+//         background: white;
+//         color: black;
+//     }
 
-    .#{$search}-#{$i} {
-        border: none;
-        background: none;
-        outline: none;
-        float: left;
-        padding: 0;
-        color: white;
-        font-size: 16px;
-        transition: 0.4s;
-        line-height: 40px;
-        width: 0px;
-    }
+//     .#{$search}-#{$i} {
+//         border: none;
+//         background: none;
+//         outline: none;
+//         float: left;
+//         padding: 0;
+//         color: white;
+//         font-size: 16px;
+//         transition: 0.4s;
+//         line-height: 40px;
+//         width: 0px;
+//     }
 
-}
+// }
 
 
-.search-btn {
-    color: #dfe6e9;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    color: white;
-    cursor: pointer;
-}
+// .search-btn {
+//     color: #dfe6e9;
+//     float: right;
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 50%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     transition: 0.4s;
+//     color: white;
+//     cursor: pointer;
+// }
