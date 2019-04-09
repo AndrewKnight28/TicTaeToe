@@ -1,0 +1,143 @@
+$bg-color: #1e1e1e;
+$class-slug: box !default;
+$search: search-txt;
+$sbox: search-box;
+
+@function pos($i) {
+    @if ($i % 3==0) {
+        @return 3;
+    }
+
+    @else {
+        @return $i%3;
+    }
+}
+
+body {
+    background-color: $bg-color;
+}
+
+header {
+    background: white;
+    padding: 20px;
+
+    h1 {
+        color: #25272E;
+        text-align: center;
+        font-family: 'Monaco';
+    }
+}
+
+.board {
+    padding: 40px;
+    color: wheat;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 104px 104px 104px;
+    font-size: 40px;
+
+    justify-content: center;
+    text-align: center;
+
+    @for $i from 1 through 9 {
+        .#{$class-slug}-#{$i} {
+            background-color: #25272E;
+            border: 3px solid white;
+            width: 100px;
+            height: 100px;
+            align-items: center;
+            align-content: center;
+            // grid-column: [pos($i)] / [pos($i)+1];
+        }
+    }
+
+    @for $i from 1 through 9 {
+        .#{$class-slug}-#{$i}:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+.users {
+    font-size: 40px;
+    color: white;
+
+    .namebox {
+        background-color: red;
+        position: relative;
+        width: 612px;
+        left: 30%;
+    }
+
+    p {
+        text-align: center;
+        font-family: 'Monaco';
+    }
+}
+
+
+
+@for $i from 1 through 2 {
+
+    .#{$sbox}-#{$i} {
+        position: absolute;
+        top: 35%;
+
+        @if ($i==1) {
+            left: 25%;
+        }
+
+        @else {
+            left: 75%;
+        }
+
+        transform: translate(-50%, -50%);
+        background: #2f3640;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+
+    }
+
+    .#{$sbox}-#{$i}:hover>.#{$search}-#{$i} {
+        width: 240px;
+        padding: 0 6px;
+    }
+
+    .#{$sbox}-#{$i}:hover>.search-btn {
+        background: white;
+        color: black;
+    }
+
+    .#{$search}-#{$i} {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: white;
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0px;
+    }
+
+}
+
+
+.search-btn {
+    color: #dfe6e9;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
