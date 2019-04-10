@@ -2,6 +2,9 @@ var boxes = [];
 var grids = [];
 var turn = 0;
 var prompt = document.querySelector(".users > p");
+var xlong = [];
+var olong = [];
+var winner = " ";
 
 for (let i = 1; i < 10; i++) {
     boxes[i] = document.querySelector(`.box-${i}`);
@@ -12,64 +15,89 @@ function fill(num) {
     if (num == 0) {
         for (let l = 1; l < 10; l++) {
             grids[l].textContent = " ";
+
         }
     } else if (turn % 2 == 0) {
         grids[num].textContent = "X";
+        xlong.push(num);
         turn++;
+        prompt.textContent = " O TURN ";
+
     } else {
         grids[num].textContent = "O";
+        olong.push(num);
         turn++;
+        prompt.textContent = " X TURN ";
+
     }
 
 }
 
-function winCondition(places) {
-    let i = places[0];
-    let j = places[1];
-    let k = places[2];
-    if (grids[i].textContent == grids[j].textContent == grids[k].textContent) {
-        won(grids[i].textContent);
-    } else {
-        return false;
+function check(i, j, k) {
+    let cx = 0;
+    let co = 0;
+    for (n of xlong) {
+        if (n == i) {
+            cx++;
+        }
+        if (n == j) {
+            cx++;
+        }
+        if (n == k) {
+            cx++
+        }
+    }
+    //maybe do a function insted of repeat same code
+    for (n of olong) {
+        if (n == i) {
+            co++;
+        }
+        if (n == j) {
+            co++;
+        }
+        if (n == k) {
+            co++
+        }
+    }
+
+    if (cx == 3) {
+        winner = "X";
+    } else if (co == 3) {
+        winner = "O";
+
     }
 }
-// 123 456 789 147 258 369 159 357
-
-//  else if (grids[4].textContent == grids[5].textContent == grids[6].textContent) { 
-//      return "456"
-// }${toWord(userChoice)} ${smallUser} and ${toWord(compChoice)} $\{smallComp} are the same. You Draw`; 
+// winning conditions 123 456 789 147 258 369 159 357
 
 function won(xoro) {
     prompt.textContent = xoro + " WON";
-    fill(0);
+
 }
 
 function game(num) {
     fill(num);
-    let op = "";
-    if (turn > 4) {
-        if (winCondition("123")) {
-            console.log(won);
-        } else if (winCondition("456")) {
-            console.log(won);
-        } else if (winCondition("789")) {
-            console.log(won);
-        } else if (winCondition("147")) {
-            console.log(won);
-        } else if (winCondition("258")) {
-            console.log(won);
-        } else if (winCondition("369")) {
-            console.log(won);
-        } else if (winCondition("159")) {
-            console.log(won);
-        } else if (winCondition("357")) {
-            console.log(won);
-        }
 
+    if (turn > 4) {
+        check(1, 2, 3);
+        check(4, 5, 6);
+        check(7, 8, 9);
+        check(1, 4, 7);
+        check(2, 5, 8);
+        check(3, 6, 9);
+        check(1, 5, 9);
+        check(3, 5, 7);
+    }
+
+    if (winner != " ") {
+        console.log(winner);
+        won(winner);
+        setTimeout(() => fill(0), 1000);
+        setTimeout(() => location.reload(), 1000);
     }
 
     if (turn == 9) {
-        prompt.textContent = "DRAW";
+        prompt.textContent = "DRAW"; //must fix now inning ins last turn
+        setTimeout(() => location.reload(), 1000);
     }
 }
 
@@ -83,5 +111,3 @@ function main() {
 }
 
 main();
-console.log(1 + 2);
-console.log("1" + "2");
